@@ -1,0 +1,7 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+.vscode/
+flagged/
+*.py[cod]
+*$py.class
+config.json5
