@@ -4,4 +4,3 @@ __pycache__/
 flagged/
 *.py[cod]
 *$py.class
-config.json5
