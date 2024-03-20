@@ -9,6 +9,7 @@ app_file: app.py
 pinned: false
 license: apache-2.0
 ---
+
 Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
 
 # Copied from https://huggingface.co/spaces/aadnk/faster-whisper-webui
@@ -16,7 +17,6 @@ Check out the configuration reference at https://huggingface.co/docs/hub/spaces-
 # Running Locally
 
 To run this program locally, first install Python 3.9+ and Git. Then install Pytorch 10.1+ and all the other dependencies:
-
 ```
 pip install -r requirements.txt
 ```
@@ -24,13 +24,11 @@ pip install -r requirements.txt
 You can find detailed instructions for how to install this on Windows 10/11 [here (PDF)](docs/windows/install_win10_win11.pdf).
 
 Finally, run the full version (no audio length restrictions) of the app with parallel CPU/GPU enabled:
-
 ```
 python app.py --input_audio_max_duration -1 --server_name 127.0.0.1 --auto_parallel True
 ```
 
 You can also run the CLI interface, which is similar to Whisper's own CLI but also supports the following additional arguments:
-
 ```
 python cli.py \
 [--vad {none,silero-vad,silero-vad-skip-gaps,silero-vad-expand-into-gaps,periodic-vad}] \
@@ -42,28 +40,30 @@ python cli.py \
 [--vad_parallel_devices COMMA_DELIMITED_DEVICES]
 [--auto_parallel BOOLEAN]
 ```
-
 In addition, you may also use URL's in addition to file paths as input.
-
 ```
 python cli.py --model large --vad silero-vad --language Japanese "https://www.youtube.com/watch?v=4cICErqqRSM"
 ```
 
-Rather than supplying arguments to `app.py` or `cli.py`, you can also use the configuration file [config.json5](config.json5). See that file for more information.
+Rather than supplying arguments to `app.py` or `cli.py`, you can also use the configuration file [config.json5](config.json5). See that file for more information. 
 If you want to use a different configuration file, you can use the `WHISPER_WEBUI_CONFIG` environment variable to specify the path to another file.
 
 ### Multiple Files
 
-You can upload multiple files either through the "Upload files" option, or as a playlist on YouTube.
-Each audio file will then be processed in turn, and the resulting SRT/VTT/Transcript will be made available in the "Download" section.
+You can upload multiple files either through the "Upload files" option, or as a playlist on YouTube. 
+Each audio file will then be processed in turn, and the resulting SRT/VTT/Transcript will be made available in the "Download" section. 
 When more than one file is processed, the UI will also generate a "All_Output" zip file containing all the text output files.
 
 ## Diarization
 
-To detect different speakers in the audio, you can use the [whisper-diarization](https://gitlab.com/aadnk/whisper-diarization) application.
+To detect different speakers in the audio, you can use the [whisper-diarization](https://gitlab.com/aadnk/whisper-diarization) application, or check "Diarization" in the options.
 
-Download the JSON file after running Whisper on an audio file, and then run app.py in the
+Download the JSON file after running Whisper on an audio file, and then run app.py in the 
 whisper-diarization repository with the audio file and the JSON file as arguments.
+
+## Translation
+
+To translate the transcript to English, set the task to "Translate". You can also use ChatGPT for this task via my [translate-gpt](https://gitlab.com/aadnk/translate-gpt) CLI application.
 
 ## Whisper Implementation
 
