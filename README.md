@@ -13,6 +13,11 @@ license: apache-2.0
 Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
 
 # Copied from https://huggingface.co/spaces/aadnk/faster-whisper-webui
+just 
+```
+python app.py
+```
+config file are already prepared
 
 # Running Locally
 
