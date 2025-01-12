@@ -43,7 +43,7 @@ class NonSpeechStrategy(Enum):
     EXPAND_SEGMENT = 3
 
 # Defaults for Silero
-SPEECH_TRESHOLD = 0.3
+SPEECH_TRESHOLD = 0.15
 
 # Minimum size of segments to process
 MIN_SEGMENT_DURATION = 1

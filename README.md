@@ -17,7 +17,9 @@ just
 ```
 python app.py
 ```
-config file are already prepared
+config file are already prepared.
+
+New cn-jp translation model here https://www.south-plus.net/read.php?tid-2228184.html (fasterWhisper)
 
 # Running Locally
 

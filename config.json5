@@ -30,6 +30,11 @@
             "name": "large-v3",
             "url": "large-v3"
         },
+        {
+            "name": "large-v2-jp-trans",
+            "url": "../whisper-large-v2-translate-zh-v0.1-lt-ct2-v0.7/model",
+            "type": "faster-whisper"
+        },
         // Uncomment to add custom Japanese models
         // NOTE: For Faster-Whisper, the models must be converted to the CTranslate2 format,
         //       see https://github.com/guillaumekln/faster-whisper#model-conversion
@@ -75,9 +80,9 @@
     "whisper_implementation": "faster-whisper",
 
     // The default model name.
-    "default_model_name": "large-v3",
+    "default_model_name": "large-v2-jp-trans",
     // The default VAD.
-    "default_vad": "silero-vad-skip-gaps",
+    "default_vad": " silero-vad-expand-into-gaps",
     // A commma delimited list of CUDA devices to use for parallel processing. If None, disable parallel processing.
     "vad_parallel_devices": "",
     // The number of CPU cores to use for VAD pre-processing.
@@ -95,13 +100,13 @@
     // Whether to print out the progress and debug messages
     "verbose": true,
     // Whether to perform X->X speech recognition ('transcribe') or X->English translation ('translate')
-    "task": "transcribe",
+    "task": "translate",
     // Language spoken in the audio, specify None to perform language detection
-    "language": null,
+    "language": "Japanese",
     // The window size (in seconds) to merge voice segments
     "vad_merge_window": 5,
     // The maximum size (in seconds) of a voice segment
-    "vad_max_merge_size": 15,
+    "vad_max_merge_size": 30,
     // The padding (in seconds) to add to each voice segment
     "vad_padding": 1,
     // Whether or not to prepend the initial prompt to each VAD segment (prepend_all_segments), or just the first segment (prepend_first_segment)
