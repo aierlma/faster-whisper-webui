@@ -82,7 +82,7 @@
     // The default model name.
     "default_model_name": "large-v2-jp-trans",
     // The default VAD.
-    "default_vad": " silero-vad-expand-into-gaps",
+    "default_vad": "silero-vad-expand-into-gaps", //"silero-vad-skip-gaps"
     // A commma delimited list of CUDA devices to use for parallel processing. If None, disable parallel processing.
     "vad_parallel_devices": "",
     // The number of CPU cores to use for VAD pre-processing.
